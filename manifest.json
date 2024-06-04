@@ -1,0 +1,55 @@
+{
+    "name": "Record Me Now",
+    "description": "A chrome extension that allows users to record their tab and screens with their faces injected",
+    "version" : "1",
+    "manifest_version": 3,
+    "minimum_chrome_version": "116",
+    "action": 
+    {
+        "default_icon": 
+        {
+            "16": "icons/not_recording.png",
+            "32": "icons/not_recording.png"
+        },
+        "default_popup": "popup.html"
+    },
+
+    "host_permissions": 
+    [
+        "https://*/*",
+        "http://*/*"
+    ],
+
+    "background": 
+    {
+        "service_worker": "service_worker.js"
+    },
+
+    "permissions":
+    [
+        "tabCapture",
+        "offscreen",
+        "scripting",
+        "storage",
+        "desktopCapture",
+        "tabs"
+    ],
+    "web_accessible_resources":
+    [
+        {
+            "resources": 
+            [
+                "camera.html", 
+                "camera.js", 
+                "video.html", 
+                "video.js"
+            ],
+            "matches": 
+             [
+                "https://*/*",
+                "http://*/*"
+            ]
+        }
+    ]
+
+}
